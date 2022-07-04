@@ -1,0 +1,26 @@
+.jumbotron {
+    background: url("../images/microbial-biodiversity.jpg") no-repeat center center fixed;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    text-align: center;
+    color: whitesmoke;
+}
+
+
+body {
+
+    color: #f7f7f7;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+a+a {
+  margin-left: 5px;
+    
+}
+
+nav a {
+  display: inline-block;
+  padding: 5px;
+}

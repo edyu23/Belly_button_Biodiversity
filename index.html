@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="#">
+    <title>Bellybutton Biodiversity</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/3/darkly/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://bootswatch.com/4/slate/bootstrap.min.css"> -->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+  </head>
+  
+  <body>
+  
+    <div class="container">
+      <div class="row">
+        <!-- <nav class="panel panel-primary panel-heading navbar navbar-expand-lg"> -->
+        <nav class="panel panel-primary">
+          <nav class="panel-heading">
+            <a class="panel-title" href="index.html">Home</a>
+            <a class="panel-title" href="#bar">Horizontal Bar Chart</a>
+            <a class="panel-title" href="#gauge">Gauge Chart</a>
+            <a class="panel-title" href="#bubble">Bubble Chart</a>
+            <a class="panel-title" href="#about">About</a>
+          </nav>
+        </nav>
+        <div class="col-md-12 jumbotron">
+          <h1>Belly Button Biodiversity Dashboard</h1>
+          <p>Use the interactive charts below to explore the dataset</p>
+        </div>
+      </div>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h1 id="about" class="panel-title" style="font-size: 40px; color: whitesmoke;"> About The Visualization</h1>
+        </div>
+        <div class="panel-body"> 
+          <p style="font-size: 20px; color: whitesmoke;">This dashboard visualises bacterial data found in the belly button of 153 volunteers. The bar chart visualises the top 10 bacterial species
+            found in the belly buttons of the volunteers, the bubble chart emphasises bacterial species with the highest concentration per individual. 
+            Finally, the gauge chart displays belly washing frequency per week for each volunteer. 
+            If Improbable Beef identifies a  bacterial species as a candidate to manufacture synthetic beef, 
+            our Visualization will help to identify whether that species is found in the navel of the volunteers.
+            <a href="https://github.com/edyu23/Belly_button_Biodiversity" target="_blank">Code can be found here</a>
+          </p>
+        </div>
+      
+      </div>
+      <div class="row" style="margin-bottom: 20px;">
+        <div class="col-md-2">
+          <div class="well">
+            <h5>Test Subject ID No.:</h5>
+            <!-- <select id="selDataset"></select> -->
+            <select id="selDataset" onchange="optionChanged(this.value)" style="color: black;"></select>
+          </div>
+          
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Demographic Info</h3>
+            </div>
+            <div id="sample-metadata" class="panel-body"></div>
+          </div>
+        </div>
+        
+        <div class="col-md-5">
+          <div id="bar"></div>
+        </div>
+        <div class="col-md-5">
+          <div id="gauge"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Demographic Info</h3>
+            </div>
+            <div class="panel-body">Demographic Info and belly button weekly washing frequency values</div>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Horizontal Bar Chart</h3>
+            </div>
+            <div class="panel-body">Horizontal bar chart that displays the top 10 bacterial species when an individual’s ID is selected from the dropdown menu. 
+              The chart displays the sample bacteria values, the otu_ids as the labels, and the bacterial species as the hover text for the bars on the chart.</div>
+          </div>
+
+        </div>
+        <div class="col-md-5">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Gauge Chart</h3>
+            </div>
+            <div class="panel-body">A gauge chart that displays the weekly belly button washing frequency value of an individual ID. The washing frequency value is displayed as a measure from 0-10 on the progress bar in the gauge chart when an individual ID is selected from the dropdown menu.</div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-bottom: 20px;">
+        <div class="col-md-12">
+          <div id="bubble"></div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Bubble Chart</h3>
+          </div>
+          <div class="panel-body">A bubble chart that displays the following  when an individual’s ID is selected from the dropdown menu webpage:<br>
+            <ul>
+              <li>OTU_IDs as x-axis vales</li>
+              <li>bacterial sample values as y-axis values</li>
+              <li>bacterial sample values as marker size</li>
+              <li>OTU_IDs as marker colors</li>
+              <li>bacterial sample as hover-text values</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script type="application/json" src="samples.json"></script>
+  <script type="text/javascript" src="./static/js/charts.js"></script>
+
+</body>
+
+</html>
